@@ -1,0 +1,43 @@
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body ng-app="myapp">
+    <div ng-controller="MainCtrl">
+        <input 
+            type="text"
+            ng-model="myval"
+            ng-change="searchUsers()"
+        >
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="u in filteredUsers">
+                    <td>{{u.name}}</td>
+                    <td>{{u.age}}</td>
+                    <td>
+                        <button ng-click="selectUser(u)">
+                            View Details
+                        </button>
+                    </td>
+                </tr>
+            </tbody> 
+        </table>
+
+        <div ng-if="activeUser">
+            <h3>Selected user</h3>
+            <h4>Name is {{activeUser.name}}</h4>
+            <h4>Age is {{activeUser.age}}</h4>
+        </div>
+
+    </div>
+    <script src="angular.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
