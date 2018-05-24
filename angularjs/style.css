@@ -2,7 +2,7 @@ body{
     background-color: beige;
 }
 
-.mylist{
+.mylist, .newdirective{
     border: 1px solid #000;
     padding: 10px;
     background-color: yellow;
